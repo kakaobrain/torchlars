@@ -37,6 +37,7 @@ Currently, torchlars requires the following environments:
 
 - Python 3.6+
 - PyTorch 1.1+
+- CUDA 10+
 
 To use torchlars, install it via PyPI:
 
