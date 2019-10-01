@@ -7,21 +7,23 @@ from torchlars._adaptive_lr import compute_adaptive_lr
 
 __all__ = ['LARS']
 
+
 class LARS(Optimizer):
     """Implements 'LARS (Layer-wise Adaptive Rate Scaling)'__ as Optimizer a
     :class:`~torch.optim.Optimizer` wrapper.
 
     __ : https://arxiv.org/abs/1708.03888
-    
-    Wraps an arbitrary optimizer like :class:`torch.optim.SGD` to use LARS. If you want to the
-    same performance obtained with small-batch training when you use large-batch
-    training, LARS will be helpful::
+
+    Wraps an arbitrary optimizer like :class:`torch.optim.SGD` to use LARS. If
+    you want to the same performance obtained with small-batch training when
+    you use large-batch training, LARS will be helpful::
 
     Args:
         optimizer (Optimizer):
             optimizer to wrap
         eps (float, optional):
-            epsilon to help with numerical stability while calculating the adaptive learning rate
+            epsilon to help with numerical stability while calculating the
+            adaptive learning rate
         trust_coef (float, optional):
             trust coefficient for calculating the adaptive learning rate
 
@@ -34,6 +36,7 @@ class LARS(Optimizer):
         loss.backward()
 
         optimizer.step()
+
     """
 
     def __init__(self, optimizer, eps=1e-8, trust_coef=0.001):
@@ -103,13 +106,14 @@ class LARS(Optimizer):
                     param_norm = p.norm()
                     grad_norm = p.grad.norm()
 
-                    # The optimizer class has no method to change `dtype` of its
-                    # inner tensors (like `adaptive_lr`) and to select to use CPU
-                    # or GPU with Tensor. LARS's interface follows the optimizer
-                    # class's interface, so LARS cannot change `dtype` of inner
-                    # tensors explicitly also. In that context, we have constructed
-                    # LARS can modify its member variable' spec implicitly by
-                    # comparing with given spec by the original optimizer's element.
+                    # The optimizer class has no method to change `dtype` of
+                    # its inner tensors (like `adaptive_lr`) and to select to
+                    # use CPU or GPU with Tensor. LARS's interface follows the
+                    # optimizer class's interface, so LARS cannot change
+                    # `dtype` of inner tensors explicitly also. In that
+                    # context, we have constructed LARS can modify its member
+                    # variable' spec implicitly by comparing with given spec by
+                    # the original optimizer's element.
                     param_norm_spec = (param_norm.is_cuda, param_norm.type())
                     adaptive_lr_spec = (self.adaptive_lr.is_cuda, self.adaptive_lr.type())
 
