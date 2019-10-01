@@ -26,6 +26,9 @@ jobs:
         - flake8 .
 
 # Test with various Python and PyTorch versions.
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install nvidia-cuda-toolkit -y
 install:
   - pip install torch==$PYTORCH
   - python setup.py install
