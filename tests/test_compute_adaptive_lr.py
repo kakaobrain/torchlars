@@ -41,6 +41,7 @@ def test_compare_cpu_and_gpu(dtype):
 
     assert torch.allclose(adaptive_lr_cpu, adaptive_lr_gpu.cpu())
 
+
 @pytest.mark.parametrize('dtype', [torch.float, torch.double])
 def test_when_param_norm_is_zero(dtype):
     param_norm = torch.tensor(0., dtype=dtype)
@@ -60,6 +61,7 @@ def test_when_param_norm_is_zero(dtype):
         adaptive_lr)
 
     assert adaptive_lr == torch.tensor(1., dtype=dtype)
+
 
 @pytest.mark.skipif(not torch.cuda.is_available(), reason='cuda required')
 def test_when_param_norm_is_zero_with_half():
@@ -81,6 +83,7 @@ def test_when_param_norm_is_zero_with_half():
 
     assert adaptive_lr == torch.tensor(1., dtype=torch.half, device='cuda')
 
+
 @pytest.mark.parametrize('dtype', [torch.float, torch.double])
 def test_when_grad_norm_is_zero(dtype):
     param_norm = torch.tensor(1., dtype=dtype)
@@ -100,6 +103,7 @@ def test_when_grad_norm_is_zero(dtype):
         adaptive_lr)
 
     assert adaptive_lr == torch.tensor(1., dtype=dtype)
+
 
 @pytest.mark.skipif(not torch.cuda.is_available(), reason='cuda required')
 def test_when_grad_norm_is_zero_with_half():
@@ -121,6 +125,7 @@ def test_when_grad_norm_is_zero_with_half():
 
     assert adaptive_lr == torch.tensor(1., dtype=torch.half, device='cuda')
 
+
 @pytest.mark.parametrize('dtype', [torch.float, torch.double])
 def test_specific_case(dtype):
     param_norm = torch.tensor(1.234, dtype=dtype)
@@ -140,6 +145,7 @@ def test_specific_case(dtype):
         adaptive_lr)
 
     assert torch.allclose(adaptive_lr, torch.tensor(0.000217325, dtype=dtype))
+
 
 @pytest.mark.skipif(not torch.cuda.is_available(), reason='cuda required')
 def test_specific_case_with_half():
