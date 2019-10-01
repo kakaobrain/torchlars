@@ -30,6 +30,8 @@ setup(
     zip_safe=False,
     packages=['torchlars'],
     install_requires=['torch'],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest>=4'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
