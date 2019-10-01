@@ -2,12 +2,19 @@ from setuptools import setup
 
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
+about = {}
+with open('torchlars/__version__.py') as f:
+    exec(f.read(), about)
+version = about['__version__']
+del about
+
+
 with open('README.md') as f:
     long_description = f.read()
 
 setup(
     name='torchlars',
-    version='0.0.1',
+    version=version,
     author='Kakao Brain',
     ext_modules=[
         CUDAExtension('torchlars._adaptive_lr', [
