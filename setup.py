@@ -1,5 +1,4 @@
 from setuptools import setup
-
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
 about = {}
@@ -12,10 +11,12 @@ del about
 with open('README.md') as f:
     long_description = f.read()
 
+
 setup(
     name='torchlars',
     version=version,
     author='Kakao Brain',
+    maintainer='Chunmyong Park',
     ext_modules=[
         CUDAExtension('torchlars._adaptive_lr', [
             'torchlars/adaptive_lr.cc',
@@ -26,7 +27,6 @@ setup(
     description='A LARS implementation in PyTorch',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    maintainer='Chunmyong Park',
     zip_safe=False,
     packages=['torchlars'],
     install_requires=['torch'],
