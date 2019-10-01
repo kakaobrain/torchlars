@@ -1,5 +1,8 @@
 # torchlars
 
+[![PyPI](https://img.shields.io/pypi/v/torchlars.svg)](https://pypi.org/project/torchlars)
+[![Build Status](https://travis-ci.org/kakaobrain/torchlars.svg?branch=master)](https://travis-ci.org/kakaobrain/torchlars)
+
 A [LARS](https://arxiv.org/abs/1708.03888) implementation in PyTorch.
 
 ```python
