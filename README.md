@@ -91,9 +91,9 @@ Most experimental conditions are similar to used in the paper, but we slightly
 change some conditions like learning rate to observe comparable results as
 proposed by the LARS paper.
 
-_Note: We refer [log file]
-(https://people.eecs.berkeley.edu/~youyang/publications/batch/) provided by
-paper to obtain above hyper-parameters._
+_Note: We refer
+[log file](https://people.eecs.berkeley.edu/~youyang/publications/batch/)
+provided by paper to obtain above hyper-parameters._
 
 ## Authors and Licensing
 
