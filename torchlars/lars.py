@@ -112,8 +112,8 @@ class LARS(Optimizer):
                     # optimizer class's interface, so LARS cannot change
                     # `dtype` of inner tensors explicitly also. In that
                     # context, we have constructed LARS can modify its member
-                    # variable' spec implicitly by comparing with given spec by
-                    # the original optimizer's element.
+                    # variable's spec implicitly by comparing with given spec
+                    # by the original optimizer's element.
                     param_norm_spec = (param_norm.is_cuda, param_norm.type())
                     adaptive_lr_spec = (self.adaptive_lr.is_cuda, self.adaptive_lr.type())
 
