@@ -35,6 +35,7 @@ environment where CPU to GPU synchronization does not occur.
 
 Currently, torchlars requires the following environments:
 
+- Linux
 - Python 3.6+
 - PyTorch 1.1+
 - CUDA 10+
