@@ -108,3 +108,17 @@ It is distributed under [Apache License 2.0](LICENSE).
 [kakao brain]: https://kakaobrain.com/
 [woonhyuk baek]: https://github.com/wbaek
 [myungryong jeong]: https://github.com/mrJeong
+
+## Citation
+
+If you apply this library to any project and research, please cite our code:
+
+```
+@misc{torchlars,
+  author       = {Chunmyong Park and Heungsub Lee and Myungryong Jeong and
+                  Woonhyuk Baek and Chiheon Kim},
+  title        = {torchlars, {A} {LARS} implementation in {PyTorch}},
+  howpublished = {\url{https://github.com/kakaobrain/torchlars}},
+  year         = {2019}
+}
+```
