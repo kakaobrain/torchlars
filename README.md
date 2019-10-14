@@ -115,8 +115,8 @@ If you apply this library to any project and research, please cite our code:
 
 ```
 @misc{torchlars,
-  author       = {Chunmyong Park and Heungsub Lee and Myungryong Jeong and
-                  Woonhyuk Baek and Chiheon Kim},
+  author       = {Park, Chunmyong and Lee, Heungsub and Jeong, Myungryong and
+                  Baek, Woonhyuk and Kim, Chiheon},
   title        = {torchlars, {A} {LARS} implementation in {PyTorch}},
   howpublished = {\url{https://github.com/kakaobrain/torchlars}},
   year         = {2019}
