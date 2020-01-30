@@ -52,7 +52,6 @@ class LARS(Optimizer):
 
     def __getstate__(self):
         lars_dict = {}
-        lars_dict['class_name'] = self.optim.__class__
         lars_dict['eps'] = self.eps
         lars_dict['trust_coef'] = self.trust_coef
         lars_dict['adaptive_lr'] = self.adaptive_lr
