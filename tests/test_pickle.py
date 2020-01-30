@@ -1,14 +1,12 @@
 import copy
 import pickle
 
-import pytest
 import torch
 from torch.optim import SGD
 
 from torchlars import LARS
 
 
-@pytest.mark.xfail
 def test_pickle():
     sgd = SGD([torch.Tensor()], lr=0.1)
     lars = LARS(sgd, trust_coef=0.42)
@@ -19,7 +17,6 @@ def test_pickle():
     assert lars2.trust_coef == 0.42
 
 
-@pytest.mark.xfail
 def test_copy():
     sgd = SGD([torch.Tensor()], lr=0.1)
     lars = LARS(sgd, trust_coef=0.42)
@@ -30,7 +27,6 @@ def test_copy():
     assert lars2.trust_coef == 0.42
 
 
-@pytest.mark.xfail
 def test_deepcopy():
     sgd = SGD([torch.Tensor()], lr=0.1)
     lars = LARS(sgd, trust_coef=0.42)
