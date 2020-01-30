@@ -51,10 +51,18 @@ class LARS(Optimizer):
         self.adaptive_lr = torch.ones([])
 
     def __getstate__(self):
-        return self.optim.__getstate__()
+        lars_dict = {}
+        lars_dict['eps'] = self.eps
+        lars_dict['trust_coef'] = self.trust_coef
+        lars_dict['adaptive_lr'] = self.adaptive_lr
+        return (self.optim, lars_dict)
 
     def __setstate__(self, state):
-        self.optim.__setstate__(state)
+        self.optim, lars_dict = state
+
+        self.eps = lars_dict['eps']
+        self.trust_coef = lars_dict['trust_coef']
+        self.adaptive_lr = lars_dict['adaptive_lr']
 
     def __repr__(self):
         return '%s(%r)' % (self.__class__.__name__, self.optim)
